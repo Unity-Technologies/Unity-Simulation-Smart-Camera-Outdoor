@@ -1,0 +1,175 @@
+fileFormatVersion: 2
+guid: bbbfb0e2bfdce8e4d8635d70f9167f35
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: //RootNode
+    100002: TruckWheelBackLeft1
+    100004: TruckWheelBackLeft2
+    100006: TruckWheelBackLeft3
+    100008: TruckWheelBackLeft4
+    100010: TruckWheelBackLeft5
+    100012: TruckWheelBackRight1
+    100014: TruckWheelBackRight2
+    100016: TruckWheelBackRight3
+    100018: TruckWheelBackRight4
+    100020: TruckWheelBackRight5
+    100022: TruckWheelFrontLeft
+    100024: TruckWheelFrontRight
+    100026: TruckTrailer
+    400000: //RootNode
+    400002: TruckWheelBackLeft1
+    400004: TruckWheelBackLeft2
+    400006: TruckWheelBackLeft3
+    400008: TruckWheelBackLeft4
+    400010: TruckWheelBackLeft5
+    400012: TruckWheelBackRight1
+    400014: TruckWheelBackRight2
+    400016: TruckWheelBackRight3
+    400018: TruckWheelBackRight4
+    400020: TruckWheelBackRight5
+    400022: TruckWheelFrontLeft
+    400024: TruckWheelFrontRight
+    400026: TruckTrailer
+    2100000: TruckBody
+    2100002: TruckEmissive
+    2100004: TruckGlass
+    2300000: //RootNode
+    2300002: TruckWheelBackLeft1
+    2300004: TruckWheelBackLeft2
+    2300006: TruckWheelBackLeft3
+    2300008: TruckWheelBackLeft4
+    2300010: TruckWheelBackLeft5
+    2300012: TruckWheelBackRight1
+    2300014: TruckWheelBackRight2
+    2300016: TruckWheelBackRight3
+    2300018: TruckWheelBackRight4
+    2300020: TruckWheelBackRight5
+    2300022: TruckWheelFrontLeft
+    2300024: TruckWheelFrontRight
+    2300026: TruckTrailer
+    3300000: //RootNode
+    3300002: TruckWheelBackLeft1
+    3300004: TruckWheelBackLeft2
+    3300006: TruckWheelBackLeft3
+    3300008: TruckWheelBackLeft4
+    3300010: TruckWheelBackLeft5
+    3300012: TruckWheelBackRight1
+    3300014: TruckWheelBackRight2
+    3300016: TruckWheelBackRight3
+    3300018: TruckWheelBackRight4
+    3300020: TruckWheelBackRight5
+    3300022: TruckWheelFrontLeft
+    3300024: TruckWheelFrontRight
+    3300026: TruckTrailer
+    4300000: Truck
+    4300002: TruckWheelFrontRight
+    4300004: TruckWheelFrontLeft
+    4300006: TruckWheelBackRight5
+    4300008: TruckWheelBackRight4
+    4300010: TruckWheelBackRight3
+    4300012: TruckWheelBackRight2
+    4300014: TruckWheelBackRight1
+    4300016: TruckWheelBackLeft5
+    4300018: TruckWheelBackLeft4
+    4300020: TruckWheelBackLeft3
+    4300022: TruckWheelBackLeft2
+    4300024: TruckWheelBackLeft1
+    4300026: TruckTrailer
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckBody
+    second: {fileID: 2100000, guid: 7b07052d56de08c4a9e8a0d672d5f87f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckEmissive
+    second: {fileID: 2100000, guid: dd8f7eabcbab1fb4981c1747f553f69d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: TruckGlass
+    second: {fileID: 2100000, guid: a5afe532c5bcab148923834787a95d0f, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 0
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

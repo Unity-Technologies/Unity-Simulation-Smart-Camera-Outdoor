@@ -1,0 +1,181 @@
+fileFormatVersion: 2
+guid: 34b1bfd9f95b77142aa0df62b0eeef1b
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Box
+    100002: pool
+    100004: POOL-1
+    100006: POOL-1 1
+    100008: POOL22
+    100010: //RootNode
+    100012: rail
+    100014: STAIRS
+    100016: WATER
+    100018: water2
+    400000: Box
+    400002: pool
+    400004: POOL-1
+    400006: POOL-1 1
+    400008: POOL22
+    400010: //RootNode
+    400012: rail
+    400014: STAIRS
+    400016: WATER
+    400018: water2
+    2100000: rails
+    2100002: POOL-2 skate
+    2100004: M_windows_wood
+    2100006: M_concrete
+    2100008: pool-white concrete
+    2100010: pool-tiles
+    2100012: water
+    2100014: M_concrete_tiles
+    2100016: mullions0gray
+    2300000: Box
+    2300002: pool
+    2300004: POOL-1 1
+    2300006: rail
+    2300008: STAIRS
+    2300010: WATER
+    2300012: water2
+    3300000: Box
+    3300002: pool
+    3300004: POOL-1 1
+    3300006: rail
+    3300008: STAIRS
+    3300010: WATER
+    3300012: water2
+    4300000: rail
+    4300002: water2
+    4300004: Box
+    4300006: pool
+    4300008: STAIRS
+    4300010: WATER
+    4300012: POOL-1
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_concrete
+    second: {fileID: 2100000, guid: c4ec34c2430d7d2419d02e506e707402, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_concrete_tiles
+    second: {fileID: 2100000, guid: 7f9b3cfcaec8cef4e81cc90fcc015bad, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_windows_wood
+    second: {fileID: 2100000, guid: faafb2810cf13d54dbf3577e1f5f6b1b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: POOL-2 skate
+    second: {fileID: 2100000, guid: 300218673da526440a6b077cea7008e5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mullions0gray
+    second: {fileID: 2100000, guid: ed46cf23cd4ba7e438618df9b42e1eef, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pool-tiles
+    second: {fileID: 2100000, guid: e112098674d504c488583e8137bfdf44, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: pool-white concrete
+    second: {fileID: 2100000, guid: 4aec6d743f413f243bc85b96963e8dde, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: rails
+    second: {fileID: 2100000, guid: 666f777c9b773cc4fb62ba1b31bd37b5, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: water
+    second: {fileID: 2100000, guid: 8eeafb6c3850b1b46af239047535952c, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

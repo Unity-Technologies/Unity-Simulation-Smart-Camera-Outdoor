@@ -1,0 +1,142 @@
+fileFormatVersion: 2
+guid: be5ba49ac4d26634b9703dca14d6b3bc
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: Avalon_Tower
+    100002: Avalon_Tower1
+    100004: Avalon_Tower1_down_geo
+    100006: building-3-A
+    100008: //RootNode
+    100010: building-3-B
+    400000: Avalon_Tower
+    400002: Avalon_Tower1
+    400004: Avalon_Tower1_down_geo
+    400006: building-3-A
+    400008: //RootNode
+    400010: building-3-B
+    2100000: M_brick_1
+    2100002: M_mullions_graphite
+    2100004: M_metal
+    2100006: M_glass
+    2100008: M_plaster_1
+    2100010: M_windows_white
+    2300000: building-3-A
+    2300002: building-3-B
+    3300000: building-3-A
+    3300002: building-3-B
+    4300000: building-3-B
+    4300002: building-3-A
+    7400000: Take 001
+    9500000: //RootNode
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_brick_1
+    second: {fileID: 2100000, guid: e221332c18ccf364591e9eeabaf3fbab, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_glass
+    second: {fileID: 2100000, guid: a36274d403f4a4f49b4c209d28c6b048, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_metal
+    second: {fileID: 2100000, guid: bb0bfbbba89c390448d4517cdfd0bcbd, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_mullions_graphite
+    second: {fileID: 2100000, guid: 1749851b91c80954398754f5d6d1a29d, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_plaster_1
+    second: {fileID: 2100000, guid: b13c21eaf42a813478184c722c5cb715, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_windows_white
+    second: {fileID: 2100000, guid: f84663fc79f79504886e50c4500881da, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 2
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

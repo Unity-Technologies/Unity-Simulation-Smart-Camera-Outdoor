@@ -1,0 +1,242 @@
+fileFormatVersion: 2
+guid: cb912e701b10afc4fa50ed4e89152231
+ModelImporter:
+  serializedVersion: 23
+  fileIDToRecycleName:
+    100000: B-4-A
+    100002: B-4-B
+    100004: B-4-C
+    100006: //RootNode
+    100008: sign-1
+    100010: sign-2
+    100012: sign-3
+    100014: sign-4
+    100016: sign1-5
+    100018: sign1-6
+    100020: sign2-1
+    100022: sign2-2
+    100024: sign2-3
+    100026: sign2-4
+    100028: sign2-5
+    100030: sign2-6
+    100032: sign3-1
+    100034: sign3-2
+    100036: sign3-3
+    100038: sign3-4
+    100040: sign3-5
+    100042: sign3-6
+    400000: B-4-A
+    400002: B-4-B
+    400004: B-4-C
+    400006: //RootNode
+    400008: sign-1
+    400010: sign-2
+    400012: sign-3
+    400014: sign-4
+    400016: sign1-5
+    400018: sign1-6
+    400020: sign2-1
+    400022: sign2-2
+    400024: sign2-3
+    400026: sign2-4
+    400028: sign2-5
+    400030: sign2-6
+    400032: sign3-1
+    400034: sign3-2
+    400036: sign3-3
+    400038: sign3-4
+    400040: sign3-5
+    400042: sign3-6
+    2100000: M_plaster_1
+    2100002: M_glass-2
+    2100004: mullions0gray
+    2100006: M_metal
+    2100008: M_mullions_graphite
+    2100010: M_solid_stone2
+    2100012: M_metal_white
+    2100014: M_cloth
+    2300000: B-4-A
+    2300002: B-4-B
+    2300004: B-4-C
+    2300006: sign-1
+    2300008: sign-2
+    2300010: sign-3
+    2300012: sign-4
+    2300014: sign1-5
+    2300016: sign1-6
+    2300018: sign2-1
+    2300020: sign2-2
+    2300022: sign2-3
+    2300024: sign2-4
+    2300026: sign2-5
+    2300028: sign2-6
+    2300030: sign3-1
+    2300032: sign3-2
+    2300034: sign3-3
+    2300036: sign3-4
+    2300038: sign3-5
+    2300040: sign3-6
+    3300000: B-4-A
+    3300002: B-4-B
+    3300004: B-4-C
+    3300006: sign-1
+    3300008: sign-2
+    3300010: sign-3
+    3300012: sign-4
+    3300014: sign1-5
+    3300016: sign1-6
+    3300018: sign2-1
+    3300020: sign2-2
+    3300022: sign2-3
+    3300024: sign2-4
+    3300026: sign2-5
+    3300028: sign2-6
+    3300030: sign3-1
+    3300032: sign3-2
+    3300034: sign3-3
+    3300036: sign3-4
+    3300038: sign3-5
+    3300040: sign3-6
+    4300000: B-4-A
+    4300002: B-4-B
+    4300004: B-4-C
+    4300006: sign-1
+    4300008: sign-2
+    4300010: sign-3
+    4300012: sign-4
+    4300014: sign2-1
+    4300016: sign2-2
+    4300018: sign2-3
+    4300020: sign2-4
+    4300022: sign3-1
+    4300024: sign3-2
+    4300026: sign3-3
+    4300028: sign3-4
+    4300030: sign3-5
+    4300032: sign3-6
+    4300034: sign2-5
+    4300036: sign2-6
+    4300038: sign1-5
+    4300040: sign1-6
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_cloth
+    second: {fileID: 2100000, guid: 428b6c1bddb4e0e498c1850e73e51d41, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_glass-2
+    second: {fileID: 2100000, guid: 5489a80f7711a3a4c9a9475304d33d8f, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_metal
+    second: {fileID: 2100000, guid: 6934534cec84f6d4eb201d8d8ef0bc34, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_metal_white
+    second: {fileID: 2100000, guid: 6730ef37b4342c748b332576c684b0e4, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_mullions_graphite
+    second: {fileID: 2100000, guid: 79d237bfd3383d744bf4857a26108320, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_plaster_1
+    second: {fileID: 2100000, guid: 38c59aad48c9d534ab8ac3e3c0783f06, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: M_solid_stone2
+    second: {fileID: 2100000, guid: 59d145abe5d36b54c88b96309a270a09, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: mullions0gray
+    second: {fileID: 2100000, guid: 532792362b6687e40baa8f1f10147021, type: 2}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 1
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+    previousCalculatedGlobalScale: 1
+    hasPreviousCalculatedGlobalScale: 0
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
