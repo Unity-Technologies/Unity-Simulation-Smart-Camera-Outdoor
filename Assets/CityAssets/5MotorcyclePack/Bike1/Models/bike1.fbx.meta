@@ -1,0 +1,143 @@
+fileFormatVersion: 2
+guid: 058ef83a45271594a8fd95916a1442e6
+timeCreated: 1488195055
+licenseType: Store
+ModelImporter:
+  serializedVersion: 19
+  fileIDToRecycleName:
+    100000: BackAngularAbsorber
+    100002: BackDownDetail
+    100004: BackDownPivot
+    100006: BackUpDetail
+    100008: BackUpPivot
+    100010: BackWheel
+    100012: BackWheelPivot
+    100014: //RootNode
+    100016: BodyCollider
+    100018: FrontWheel
+    100020: FrontWheelTurn
+    100022: LinearAbsorber
+    100024: Shape
+    100026: Spring
+    100028: Steering
+    100030: Wing
+    100032: Empty
+    100034: CenterOfMass
+    100036: LineralAbsorber
+    400000: BackAngularAbsorber
+    400002: BackDownDetail
+    400004: BackDownPivot
+    400006: BackUpDetail
+    400008: BackUpPivot
+    400010: BackWheel
+    400012: BackWheelPivot
+    400014: //RootNode
+    400016: BodyCollider
+    400018: FrontWheel
+    400020: FrontWheelTurn
+    400022: LinearAbsorber
+    400024: Shape
+    400026: Spring
+    400028: Steering
+    400030: Wing
+    400032: Empty
+    400034: CenterOfMass
+    400036: LineralAbsorber
+    2300000: BackAngularAbsorber
+    2300002: BackDownDetail
+    2300004: BackUpDetail
+    2300006: BackWheel
+    2300008: //RootNode
+    2300010: BodyCollider
+    2300012: FrontWheel
+    2300014: Shape
+    2300016: Spring
+    2300018: Wing
+    3300000: BackAngularAbsorber
+    3300002: BackDownDetail
+    3300004: BackUpDetail
+    3300006: BackWheel
+    3300008: //RootNode
+    3300010: BodyCollider
+    3300012: FrontWheel
+    3300014: Shape
+    3300016: Spring
+    3300018: Wing
+    4300000: Bike1
+    4300002: FrontWheel
+    4300004: Wing
+    4300006: Shape
+    4300008: BackAngularAbsorber
+    4300010: BackDownDetail
+    4300012: Spring
+    4300014: BackUpDetail
+    4300016: BackWheel
+    4300018: BodyCollider
+  materials:
+    importMaterials: 1
+    materialName: 1
+    materialSearch: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importBlendShapes: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

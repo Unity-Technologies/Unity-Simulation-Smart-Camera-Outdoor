@@ -1,0 +1,216 @@
+fileFormatVersion: 2
+guid: 03714345965f0094285484b9b2a2a98f
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: brake_b
+    100002: brake_f
+    100004: casette
+    100006: chain
+    100008: chainLowPoly
+    100010: crankset
+    100012: frontBrake_cable
+    100014: frontDerailleur
+    100016: handleBars
+    100018: jockeyWheel_01
+    100020: jockeyWheel_02
+    100022: lever_l
+    100024: lever_r
+    100026: pedal_l
+    100028: pedal_r
+    100030: //RootNode
+    100032: rearBrake_cable
+    100034: rearBrake_cable2
+    100036: rearDerailleur
+    100038: saddle
+    100040: shifterCables
+    100042: shiftLevers
+    100044: steering
+    100046: wheel_b
+    100048: wheel_f
+    400000: brake_b
+    400002: brake_f
+    400004: casette
+    400006: chain
+    400008: chainLowPoly
+    400010: crankset
+    400012: frontBrake_cable
+    400014: frontDerailleur
+    400016: handleBars
+    400018: jockeyWheel_01
+    400020: jockeyWheel_02
+    400022: lever_l
+    400024: lever_r
+    400026: pedal_l
+    400028: pedal_r
+    400030: //RootNode
+    400032: rearBrake_cable
+    400034: rearBrake_cable2
+    400036: rearDerailleur
+    400038: saddle
+    400040: shifterCables
+    400042: shiftLevers
+    400044: steering
+    400046: wheel_b
+    400048: wheel_f
+    2100000: RedPaint
+    2100002: Chrome
+    2100004: Black
+    2100006: Metal
+    2100008: leather
+    2300000: brake_b
+    2300002: brake_f
+    2300004: casette
+    2300006: chain
+    2300008: chainLowPoly
+    2300010: crankset
+    2300012: frontBrake_cable
+    2300014: frontDerailleur
+    2300016: handleBars
+    2300018: jockeyWheel_01
+    2300020: jockeyWheel_02
+    2300022: lever_l
+    2300024: lever_r
+    2300026: pedal_l
+    2300028: pedal_r
+    2300030: //RootNode
+    2300032: rearBrake_cable
+    2300034: rearBrake_cable2
+    2300036: rearDerailleur
+    2300038: saddle
+    2300040: shifterCables
+    2300042: shiftLevers
+    2300044: steering
+    2300046: wheel_b
+    2300048: wheel_f
+    3300000: brake_b
+    3300002: brake_f
+    3300004: casette
+    3300006: chain
+    3300008: chainLowPoly
+    3300010: crankset
+    3300012: frontBrake_cable
+    3300014: frontDerailleur
+    3300016: handleBars
+    3300018: jockeyWheel_01
+    3300020: jockeyWheel_02
+    3300022: lever_l
+    3300024: lever_r
+    3300026: pedal_l
+    3300028: pedal_r
+    3300030: //RootNode
+    3300032: rearBrake_cable
+    3300034: rearBrake_cable2
+    3300036: rearDerailleur
+    3300038: saddle
+    3300040: shifterCables
+    3300042: shiftLevers
+    3300044: steering
+    3300046: wheel_b
+    3300048: wheel_f
+    4300000: RacingBike_01
+    4300002: brake_b
+    4300004: rearBrake_cable
+    4300006: chain
+    4300008: crankset
+    4300010: pedal_l
+    4300012: pedal_r
+    4300014: frontDerailleur
+    4300016: rearDerailleur
+    4300018: jockeyWheel_02
+    4300020: jockeyWheel_01
+    4300022: saddle
+    4300024: shiftLevers
+    4300026: shifterCables
+    4300028: lever_l
+    4300030: lever_r
+    4300032: steering
+    4300034: wheel_f
+    4300036: brake_f
+    4300038: frontBrake_cable
+    4300040: handleBars
+    4300042: rearBrake_cable2
+    4300044: wheel_b
+    4300046: casette
+    4300048: chainLowPoly
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 

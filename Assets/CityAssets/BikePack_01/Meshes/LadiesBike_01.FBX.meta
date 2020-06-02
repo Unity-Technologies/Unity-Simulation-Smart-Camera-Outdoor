@@ -1,0 +1,184 @@
+fileFormatVersion: 2
+guid: b17cb9dfddd1b2142b04d4f0261ad0a1
+ModelImporter:
+  serializedVersion: 22
+  fileIDToRecycleName:
+    100000: bell
+    100002: brake_f
+    100004: casette
+    100006: chain
+    100008: crankset
+    100010: handlebar
+    100012: //RootNode
+    100014: light_b
+    100016: light_f
+    100018: luggageCarrier
+    100020: mudguard_b
+    100022: mudguard_f
+    100024: pedal_l
+    100026: pedal_r
+    100028: saddle
+    100030: steering
+    100032: wheel_b
+    100034: wheel_f
+    400000: bell
+    400002: brake_f
+    400004: casette
+    400006: chain
+    400008: crankset
+    400010: handlebar
+    400012: //RootNode
+    400014: light_b
+    400016: light_f
+    400018: luggageCarrier
+    400020: mudguard_b
+    400022: mudguard_f
+    400024: pedal_l
+    400026: pedal_r
+    400028: saddle
+    400030: steering
+    400032: wheel_b
+    400034: wheel_f
+    2100000: paintRed
+    2100002: Chrome
+    2100004: Metal
+    2100006: paintWhite
+    2100008: Black
+    2100010: lightsRed
+    2100012: lightsWhite
+    2100014: leather
+    2300000: bell
+    2300002: brake_f
+    2300004: casette
+    2300006: chain
+    2300008: crankset
+    2300010: handlebar
+    2300012: //RootNode
+    2300014: light_b
+    2300016: light_f
+    2300018: luggageCarrier
+    2300020: mudguard_b
+    2300022: mudguard_f
+    2300024: pedal_l
+    2300026: pedal_r
+    2300028: saddle
+    2300030: steering
+    2300032: wheel_b
+    2300034: wheel_f
+    3300000: bell
+    3300002: brake_f
+    3300004: casette
+    3300006: chain
+    3300008: crankset
+    3300010: handlebar
+    3300012: //RootNode
+    3300014: light_b
+    3300016: light_f
+    3300018: luggageCarrier
+    3300020: mudguard_b
+    3300022: mudguard_f
+    3300024: pedal_l
+    3300026: pedal_r
+    3300028: saddle
+    3300030: steering
+    3300032: wheel_b
+    3300034: wheel_f
+    4300000: LadiesBike_01
+    4300002: chain
+    4300004: crankset
+    4300006: pedal_r
+    4300008: pedal_l
+    4300010: light_b
+    4300012: luggageCarrier
+    4300014: mudguard_b
+    4300016: saddle
+    4300018: steering
+    4300020: handlebar
+    4300022: bell
+    4300024: brake_f
+    4300026: light_f
+    4300028: mudguard_f
+    4300030: wheel_f
+    4300032: wheel_b
+    4300034: casette
+  externalObjects: {}
+  materials:
+    importMaterials: 1
+    materialName: 0
+    materialSearch: 1
+    materialLocation: 1
+  animations:
+    legacyGenerateAnimations: 4
+    bakeSimulation: 0
+    resampleCurves: 1
+    optimizeGameObjects: 0
+    motionNodeName: 
+    rigImportErrors: 
+    rigImportWarnings: 
+    animationImportErrors: 
+    animationImportWarnings: 
+    animationRetargetingWarnings: 
+    animationDoRetargetingWarnings: 0
+    importAnimatedCustomProperties: 0
+    importConstraints: 0
+    animationCompression: 1
+    animationRotationError: 0.5
+    animationPositionError: 0.5
+    animationScaleError: 0.5
+    animationWrapMode: 0
+    extraExposedTransformPaths: []
+    extraUserProperties: []
+    clipAnimations: []
+    isReadable: 1
+  meshes:
+    lODScreenPercentages: []
+    globalScale: 1
+    meshCompression: 0
+    addColliders: 0
+    importVisibility: 1
+    importBlendShapes: 1
+    importCameras: 1
+    importLights: 1
+    swapUVChannels: 0
+    generateSecondaryUV: 0
+    useFileUnits: 1
+    optimizeMeshForGPU: 1
+    keepQuads: 0
+    weldVertices: 1
+    preserveHierarchy: 0
+    indexFormat: 0
+    secondaryUVAngleDistortion: 8
+    secondaryUVAreaDistortion: 15.000001
+    secondaryUVHardAngle: 88
+    secondaryUVPackMargin: 4
+    useFileScale: 1
+  tangentSpace:
+    normalSmoothAngle: 60
+    normalImportMode: 0
+    tangentImportMode: 3
+    normalCalculationMode: 4
+  importAnimation: 1
+  copyAvatar: 0
+  humanDescription:
+    serializedVersion: 2
+    human: []
+    skeleton: []
+    armTwist: 0.5
+    foreArmTwist: 0.5
+    upperLegTwist: 0.5
+    legTwist: 0.5
+    armStretch: 0.05
+    legStretch: 0.05
+    feetSpacing: 0
+    rootMotionBoneName: 
+    rootMotionBoneRotation: {x: 0, y: 0, z: 0, w: 1}
+    hasTranslationDoF: 0
+    hasExtraRoot: 0
+    skeletonHasParents: 1
+  lastHumanDescriptionAvatarSource: {instanceID: 0}
+  animationType: 0
+  humanoidOversampling: 1
+  additionalBone: 0
+  userData: 
+  assetBundleName: 
+  assetBundleVariant: 
