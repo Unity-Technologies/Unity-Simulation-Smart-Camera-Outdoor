@@ -116,7 +116,7 @@ public class PathFollow : MonoBehaviour
         RaycastHit hit;
         var start = new Vector3(transform.position.x, _waypointNodes[_currentPosition].position.y + 0.5f, transform.position.z);
         var direction = _waypointNodes[_currentPosition].position - start;
-        Debug.DrawLine(start, _waypointNodes[_currentPosition].position, Color.red);
+        //Debug.DrawLine(start, _waypointNodes[_currentPosition].position, Color.red);
         if (Physics.Raycast( start, direction, out hit, 4.5f))
         {
             

@@ -56,3 +56,12 @@ You can set different appParams with these options and run the desired number of
 #### How to extend this project
 This project can be extended to simulate smart cameras at a traffic intersection. The waypoint system and car physics can be modified to generate difference scenarios to generate data set.
 
+### Limitations and known issues
+Limitations
+- The current waypoints system supports upto 20 cars. 
+- The waypoint system is not configurable. 
+- Car physics uses a single raycast to account for car in the front. It does not account for cars in the blind spot.
+
+#### Known Issues
+Depth grab currently does not work as expected with explicit render texture provided to camera's target texture. The work around for this is, provide a RenderTexture to Car's _RegularCam and set targetTexture of _DepthCam to None while running with Car dashboard camera view.
+
