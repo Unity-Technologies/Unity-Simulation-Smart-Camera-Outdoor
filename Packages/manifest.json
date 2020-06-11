@@ -9,6 +9,8 @@
     "com.unity.ide.rider": "1.1.4",
     "com.unity.ide.vscode": "1.1.4",
     "com.unity.purchasing": "2.0.6",
+    "com.unity.render-pipelines.universal": "7.1.8",
+    "com.unity.simulation.capture": "0.0.10-preview.8",
     "com.unity.textmeshpro": "2.0.1",
     "com.unity.timeline": "1.2.12",
     "com.unity.ugui": "1.0.0",
@@ -42,7 +44,6 @@
     "com.unity.modules.video": "1.0.0",
     "com.unity.modules.vr": "1.0.0",
     "com.unity.modules.wind": "1.0.0",
-    "com.unity.modules.xr": "1.0.0",
-    "com.unity.simulation.capture": "0.0.10-preview.8"
+    "com.unity.modules.xr": "1.0.0"
   }
 }
