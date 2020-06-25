@@ -20,7 +20,8 @@ public class ApplyLabeling : MonoBehaviour
                 var labelingComponent = go.AddComponent<Labeling>();
                 labelingComponent.labels = new List<string>() { tag };
             }
-            m_LabelingConfig.LabelEntries.Add(new LabelEntry(id++, tag, startValue++));
+            m_LabelingConfig.LabelEntries.Add(new LabelEntry(id++, tag, startValue));
+            startValue += 500;
         }
 
         var perceptionCamera = m_Camera.GetComponent<PerceptionCamera>();
