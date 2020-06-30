@@ -4,6 +4,7 @@ using System.Collections.Generic;
 using System.Linq;
 using Unity.Simulation;
 using UnityEngine;
+using UnityEngine.Perception.GroundTruth;
 using UnityEngine.UI;
 using Random = UnityEngine.Random;
 
@@ -24,6 +25,18 @@ public class SimulationManager : MonoBehaviour
     public List<SpawnPoint> m_SpawnPoints;
     public Material[]       m_CarMaterials;
 
+
+    public GameObject CurrentCameraView;
+
+    public ScriptableObject m_LablelingConfiguration;
+    [Header("Car Perception Camera")] 
+    public GameObject m_CarCamera;
+    
+    
+    [Header("Intersection Perception Camera")]
+    public GameObject m_IntersectionCamera;
+    
+    
     private const int MaxCarsAllowed = 10;
 
 
@@ -37,7 +50,8 @@ public class SimulationManager : MonoBehaviour
     private void Start()
     {
         StartCoroutine(SpawnCars());
-        EnableIntersectionCameraView();
+        CurrentCameraView = m_IntersectionCamera;
+        //EnableIntersectionCameraView();
         if (Configuration.Instance.IsSimulationRunningInCloud())
         {
             SetupDepthGrab();
@@ -46,14 +60,55 @@ public class SimulationManager : MonoBehaviour
         }
     }
 
+    private void Update()
+    {
+    }
+
     private void EnableIntersectionCameraView()
     {
-        m_IntersectionCameraSemantic.SetActive(true);
-        m_IntersectionMainCamera.SetActive(true);
-        m_CarCameraSemantic.SetActive(false);
-        m_CarMainCamera.SetActive(false);
-        GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera = GameObject.Find("IntersectionSemanticSegCamera").GetComponent<Camera>();
-        GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
+        
+        Debug.Assert(m_IntersectionCamera.GetComponent<Camera>() != null, "No Camera component added");
+        var perceptionCam = m_IntersectionCamera.GetComponent<PerceptionCamera>();
+        if (perceptionCam == null)
+        {
+            var comp = m_IntersectionCamera.AddComponent<PerceptionCamera>();
+            var currentPerceptionCam = CurrentCameraView.GetComponent<PerceptionCamera>();
+            comp.period = currentPerceptionCam.period;
+            comp.captureRgbImages = currentPerceptionCam.captureRgbImages;
+            comp.produceSegmentationImages = currentPerceptionCam.produceSegmentationImages;
+            comp.LabelingConfiguration = currentPerceptionCam.LabelingConfiguration;
+            Destroy(CurrentCameraView.GetComponent<PerceptionCamera>());
+        }
+        
+        m_CarCamera.SetActive(false);
+        m_IntersectionCamera.SetActive(true);
+        CurrentCameraView = m_IntersectionCamera;
+//        m_IntersectionCameraSemantic.SetActive(true);
+//        m_IntersectionMainCamera.SetActive(true);
+//        m_CarCameraSemantic.SetActive(false);
+//        m_CarMainCamera.SetActive(false);
+//        GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera = GameObject.Find("IntersectionSemanticSegCamera").GetComponent<Camera>();
+//        GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
+    }
+
+    private void EnableCarDashboardCamera()
+    {
+//        Debug.Assert(m_CarCamera.GetComponent<Camera>() != null, "No Camera component added");
+//        var perceptionCam = m_CarCamera.GetComponent<PerceptionCamera>();
+//        if (perceptionCam == null)
+//        {
+//            var comp = m_CarCamera.AddComponent<PerceptionCamera>();
+//            var currentPerceptionCam = CurrentCameraView.GetComponent<PerceptionCamera>();
+//            comp.period = currentPerceptionCam.period;
+//            comp.captureRgbImages = currentPerceptionCam.captureRgbImages;
+//            comp.produceSegmentationImages = currentPerceptionCam.produceSegmentationImages;
+//            comp.LabelingConfiguration = currentPerceptionCam.LabelingConfiguration;
+//            Destroy(CurrentCameraView.GetComponent<PerceptionCamera>());
+//        }
+        
+        m_IntersectionCamera.SetActive(false);
+        CurrentCameraView = m_CarCamera;
+        m_CarCamera.SetActive(true);
     }
 
     private void SetupDepthGrab()
@@ -89,29 +144,38 @@ public class SimulationManager : MonoBehaviour
     /// </summary>
     public void SwitchCameraView()
     {
-        if (m_CarMainCamera.active)
+//        if (m_CarMainCamera.active)
+//        {
+//            m_CarMainCamera.SetActive(false);
+//            m_CarCameraSemantic.SetActive(false);
+//            m_IntersectionMainCamera.SetActive(true);
+//            m_IntersectionCameraSemantic.SetActive(true);
+//            GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera = GameObject.Find("IntersectionSemanticSegCamera").GetComponent<Camera>();
+//            GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
+//            var cameraGrab = GetComponent<CameraGrab>();
+//            cameraGrab._cameraSources = m_IntersectionMainCamera.transform.GetComponentsInChildren<Camera>().Where(c=>c.gameObject.name != "_DepthCam").ToArray();
+//            DisableDepthCapture();
+//        }
+//        else
+//        {
+//            m_IntersectionMainCamera.SetActive(false);
+//            m_IntersectionCameraSemantic.SetActive(false);
+//            m_CarMainCamera.SetActive(true);
+//            m_CarCameraSemantic.SetActive(true);
+//            GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera =  GameObject.Find("_SegmentCam").GetComponent<Camera>();;
+//            GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
+//            var cameraGrab = GetComponent<CameraGrab>();
+//            cameraGrab._cameraSources = m_CarMainCamera.transform.GetComponentsInChildren<Camera>().Where(c=>c.gameObject.name != "_DepthCam").ToArray();
+//            SetupDepthGrab();
+//        }
+
+        if (m_CarCamera.active)
         {
-            m_CarMainCamera.SetActive(false);
-            m_CarCameraSemantic.SetActive(false);
-            m_IntersectionMainCamera.SetActive(true);
-            m_IntersectionCameraSemantic.SetActive(true);
-            GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera = GameObject.Find("IntersectionSemanticSegCamera").GetComponent<Camera>();
-            GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
-            var cameraGrab = GetComponent<CameraGrab>();
-            cameraGrab._cameraSources = m_IntersectionMainCamera.transform.GetComponentsInChildren<Camera>().Where(c=>c.gameObject.name != "_DepthCam").ToArray();
-            DisableDepthCapture();
+            EnableIntersectionCameraView();   
         }
         else
         {
-            m_IntersectionMainCamera.SetActive(false);
-            m_IntersectionCameraSemantic.SetActive(false);
-            m_CarMainCamera.SetActive(true);
-            m_CarCameraSemantic.SetActive(true);
-            GetComponent<ApplySemanticSegmentationShader>().m_SemanticSegmentationCamera =  GameObject.Find("_SegmentCam").GetComponent<Camera>();;
-            GetComponent<ApplySemanticSegmentationShader>().ApplySemanticSegmentation();
-            var cameraGrab = GetComponent<CameraGrab>();
-            cameraGrab._cameraSources = m_CarMainCamera.transform.GetComponentsInChildren<Camera>().Where(c=>c.gameObject.name != "_DepthCam").ToArray();
-            SetupDepthGrab();
+            EnableCarDashboardCamera();
         }
     }
 
@@ -141,13 +205,24 @@ public class SimulationManager : MonoBehaviour
             pathFollow.startingPoint = m_SpawnPoints[spawnPoint].startingDest;
             pathFollow.path = m_SpawnPoints[spawnPoint].path;
 
-            var semanticSeg = GetComponent<ApplySemanticSegmentationShader>();
-            if (semanticSeg)
-                semanticSeg.ApplySemanticSegmentationForObject(car);
-        
+//            var semanticSeg = GetComponent<ApplySemanticSegmentationShader>();
+//            if (semanticSeg)
+//                semanticSeg.ApplySemanticSegmentationForObject(car);
+
+            AddLabelingToGameObject(car);
+            
             if (spawnPoint == 0)
                 yield return new WaitForSeconds(50.0f);
         }
 
+    }
+
+
+    public void AddLabelingToGameObject(GameObject go)
+    {
+        Debug.Assert(!String.IsNullOrEmpty(go.tag), "The GameObject is not tagged");
+        var pcam = CurrentCameraView.GetComponent<PerceptionCamera>();
+        var lastLabel = pcam.LabelingConfiguration.LabelEntries.Last();
+        pcam.LabelingConfiguration.LabelEntries.Add(new LabelEntry() { id = lastLabel.id + 1, label = go.tag, value = lastLabel.value + 1000});
     }
 }
