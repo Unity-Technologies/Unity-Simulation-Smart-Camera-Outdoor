@@ -81,15 +81,18 @@ Depth grab currently does not work as expected with explicit render texture prov
 
 ## FAQs
 
-- Execute menu option doesn't work for me
+- **Execute menu option doesn't work for me**
+
 This might typically happen if you are not logged in or linked your project. You can do this by opening the Service window (Cmd + 0 or Ctrl + 0) and clicking on SignIn and link your project.
 
 
-- I am logged in and my project is linked, I am still not able to run on USim
+- **I am logged in and my project is linked, I am still not able to run on USim**
+
 This might happen if you have not signed up for the Unity Simulation Service. You can do the beta sign up from [here](https://unity.com/products/simulation)
 
 
-- What scene to load?
+- **What scene to load?**
+
 Try searching for CityScene in the Project.
 
 
