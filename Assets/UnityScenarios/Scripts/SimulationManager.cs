@@ -53,7 +53,6 @@ public class SimulationManager : MonoBehaviour
         CurrentCameraView = m_IntersectionCamera;
         if (Configuration.Instance.IsSimulationRunningInCloud())
         {
-            SetupDepthGrab();
             if (SimulationOptions.CameraViewToCapture == "Car")
                 SwitchCameraView();
         }
@@ -61,7 +60,6 @@ public class SimulationManager : MonoBehaviour
 
     private void EnableIntersectionCameraView()
     {
-        
         Debug.Assert(m_IntersectionCamera.GetComponent<Camera>() != null, "No Camera component added");
         var perceptionCam = m_IntersectionCamera.GetComponent<PerceptionCamera>();
         if (perceptionCam == null)
@@ -74,7 +72,7 @@ public class SimulationManager : MonoBehaviour
             comp.LabelingConfiguration = currentPerceptionCam.LabelingConfiguration;
             Destroy(CurrentCameraView.GetComponent<PerceptionCamera>());
         }
-        
+        DisableDepthCapture();
         m_CarCamera.SetActive(false);
         m_IntersectionCamera.SetActive(true);
         CurrentCameraView = m_IntersectionCamera;
@@ -98,34 +96,24 @@ public class SimulationManager : MonoBehaviour
         m_IntersectionCamera.SetActive(false);
         CurrentCameraView = m_CarCamera;
         m_CarCamera.SetActive(true);
+        SetupDepthGrab();
     }
 
     private void SetupDepthGrab()
     {
         if (SimulationOptions.CaptureDepth || !Configuration.Instance.IsSimulationRunningInCloud())
         {
-            var usimCapture = GameObject.Find("USimCaptureDemo");
-            if (usimCapture != null)
-            {
-                usimCapture.SetActive(true);
-                var depthGrab = usimCapture.GetComponent<DepthGrab>();
-                Debug.Assert(depthGrab != null, "Depth Grab component is not added");
-                depthGrab.enabled = !Configuration.Instance.IsSimulationRunningInCloud() || SimulationOptions.CaptureDepth;
-                var cameras =  m_CarMainCamera.transform.GetComponentsInChildren<Camera>();
-                foreach (var cam in cameras)
-                {
-                    if (cam.CompareTag("DepthCamera"))
-                        depthGrab._camera = cam;
-                }
-            }
+            var depthGrab = GetComponent<DepthGrab>();
+            Debug.Assert(depthGrab != null, "Depth Grab component is not added");
+            depthGrab.enabled = true;
         }
     }
 
     private void DisableDepthCapture()
     {
-        var depthGrabComponent = GetComponent<DepthGrab>();
-        if (depthGrabComponent != null)
-            depthGrabComponent.enabled = false;
+        var depthGrab= GetComponent<DepthGrab>();
+        if (depthGrab!= null)
+            depthGrab.enabled = false;
     }
 
     /// <summary>
