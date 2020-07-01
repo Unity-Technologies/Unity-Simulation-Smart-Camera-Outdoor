@@ -157,8 +157,6 @@ public class SimulationManager : MonoBehaviour
             pathFollow.startingPoint = m_SpawnPoints[spawnPoint].startingDest;
             pathFollow.path = m_SpawnPoints[spawnPoint].path;
 
-            AddLabelingToGameObject(car);
-            
             if (spawnPoint == 0)
                 yield return new WaitForSeconds(50.0f);
         }
@@ -168,6 +166,7 @@ public class SimulationManager : MonoBehaviour
 
     public void AddLabelingToGameObject(GameObject go)
     {
+        Debug.Log(go.name);
         Debug.Assert(!String.IsNullOrEmpty(go.tag), "The GameObject is not tagged");
         var pcam = CurrentCameraView.GetComponent<PerceptionCamera>();
         var lastLabel = pcam.LabelingConfiguration.LabelEntries.Last();
