@@ -40,7 +40,8 @@ This component uses perception sdk APIs to add labeling to all the tagged game o
 
 
 On switching to the car's dashboard camera view, the depth camera is enabled and you will see images with depth data getting saved at the same location. The depth is saved in the format selected from the dropdown (jpg in this case)
-![Depth Capture](docs/images/Sim03.png "Depth")
+
+![Depth Capture](docs/images/Sim03.png "Depth Capture")
 
 #### Running on USim
 The project is created with OpenGL graphics API and so you will be able to run this in USim with CPU based rendering. You can follow the same process described here (add link) to build and run on USim.
