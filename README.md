@@ -36,7 +36,7 @@ This component uses perception sdk APIs to add labeling to all the tagged game o
 - Camera: Source camera on which the labeling configuration needs to be added
 - LabelingConfig :  LabelingConfiguration scriptable object created from PerceptionSDK.
 
-![Semantic Segmentation](docs/images/Segmentation_IntersectionCam.png.jpg "Semantic Segmentation")
+![Semantic Segmentation](docs/images/Segmentation_IntersectionCam.png "Semantic Segmentation")
 
 
 On switching to the car's dashboard camera view, the depth camera is enabled and you will see images with depth data getting saved at the same location. The depth is saved in the format selected from the dropdown (jpg in this case)
