@@ -37,13 +37,17 @@ public class ClientMenu : MonoBehaviour
         else Debug.LogError("Build file does not exist at: " + buildPath); 
         var param_path = "/StreamingAssets/default_app_param.json";
         string json = "";
-        if (File.Exists(Application.dataPath + param_path)) json = File.ReadAllText(Application.dataPath + param_path);
-        else {
+        if (File.Exists(Application.dataPath + param_path))
+        {
+            json = File.ReadAllText(Application.dataPath + param_path);   
+        }
+        else 
+        {
             Debug.LogError("App param file does not exist at: " + Application.dataPath + param_path); 
             return;
         }
-        var content = JsonUtility.FromJson<SimulationOptions>(json);
-        run.SetAppParam("default", content, 1);
+        
+        run.SetAppParam("simulation-app-param", json, 1);
 
         _dataDownloadLocation = Application.persistentDataPath + "/SimulationRuns/" + run.executionId;
 
@@ -77,6 +81,9 @@ public class ClientMenu : MonoBehaviour
         {
             if (run.completed)
             {
+                if (!Directory.Exists(_dataDownloadLocation))
+                    Directory.CreateDirectory(_dataDownloadLocation);
+                
                 var download = EditorUtility.DisplayDialog("Simulation Run",
                     "The simulation run for " + run.executionId + " is complete", "Download Manifest");
                 if (download)

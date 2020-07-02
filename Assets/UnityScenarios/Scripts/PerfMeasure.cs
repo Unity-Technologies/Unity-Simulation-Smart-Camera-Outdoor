@@ -29,8 +29,9 @@ public class PerfMeasure : MonoBehaviour
     void Update()
     {
         SampleFps();
-        if (Time.renderedFrameCount == SimulationOptions.MaxNumberOfFramesToCapture)
+        if (Time.renderedFrameCount >= SimulationOptions.MaxNumberOfFramesToCapture)
         {
+            Debug.Log("RenderFrameCount : " + Time.renderedFrameCount + " MaxFrameCaptures : "  +SimulationOptions.MaxNumberOfFramesToCapture);
             Debug.Log($"Fps: {Fps} Wall Time lapsed: {Time.realtimeSinceStartup - startTime}");
             Application.Quit();
 #if UNITY_EDITOR

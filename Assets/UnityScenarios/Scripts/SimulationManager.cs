@@ -164,11 +164,6 @@ public class SimulationManager : MonoBehaviour
 
     }
 
-    public void OpenDataDirectory()
-    {
-        EditorUtility.RevealInFinder(Application.persistentDataPath);
-    }
-
 
     public void AddLabelingToGameObject(GameObject go)
     {

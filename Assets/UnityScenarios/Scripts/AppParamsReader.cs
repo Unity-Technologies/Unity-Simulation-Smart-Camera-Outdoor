@@ -1,11 +1,14 @@
-﻿using System.Collections;
+﻿using System;
+using System.Collections;
 using System.Collections.Generic;
+using System.IO;
 using Unity.Simulation;
 using UnityEngine;
 
 public class AppParamsReader : MonoBehaviour
 {
-    public struct SimulationConfig
+    [Serializable]
+    public class SimulationConfig
     {
         public int maxNumberOfFrames;
         public int numberOfCars;
@@ -15,11 +18,11 @@ public class AppParamsReader : MonoBehaviour
         public string cameraViewToCapture;
     }
     
-    [RuntimeInitializeOnLoadMethod]
+    [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
     public static void LoadAppParams()
     {
-        if (Configuration.Instance.IsSimulationRunningInCloud())
-        {
+       if (Configuration.Instance.IsSimulationRunningInCloud())
+       {
             var config = Configuration.Instance.GetAppParams<SimulationConfig>();
             SimulationOptions.MaxNumberofCars = config.numberOfCars;
             SimulationOptions.MaxNumberOfFramesToCapture = config.maxNumberOfFrames;
@@ -27,7 +30,7 @@ public class AppParamsReader : MonoBehaviour
             SimulationOptions.LightIntensity = config.lightIntensity;
             SimulationOptions.Daytime = config.daytime;
             SimulationOptions.CameraViewToCapture = config.cameraViewToCapture;
-        }
+       }
     }
 }
 
