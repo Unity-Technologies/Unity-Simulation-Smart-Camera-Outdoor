@@ -3,6 +3,7 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Simulation;
+using UnityEditor;
 using UnityEngine;
 using UnityEngine.Perception.GroundTruth;
 using UnityEngine.UI;
@@ -161,6 +162,11 @@ public class SimulationManager : MonoBehaviour
                 yield return new WaitForSeconds(50.0f);
         }
 
+    }
+
+    public void OpenDataDirectory()
+    {
+        EditorUtility.RevealInFinder(Application.persistentDataPath);
     }
 
 
