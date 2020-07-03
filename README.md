@@ -22,6 +22,7 @@ This is an empty gameobject in the hierarchy that is responsible for driving the
  
 #### PerceptionCamera 
 This component enables capture of RGB images, Semantic segmentation and Bounding box annotations for the source camera on which this script is added. In this case the PerceptionCamera script component is added to the intersection camera and the car dashboard camera. You can choose the view for which you want to generate the dataset by clicking on "Switch Camera" while running locally in editor or player and via Simulation AppParam (explained later) while running in the cloud.
+
 ![Perception Camera](docs/images/PerceptionCamera.png "Perception Camera")
  
 #### DepthGrab
@@ -37,18 +38,21 @@ This component uses perception sdk APIs to add labeling to all the tagged game o
 - LabelingConfig :  LabelingConfiguration scriptable object created from PerceptionSDK.
  
 ![Semantic Segmentation](docs/images/Segmentation_IntersectionCam.png "Semantic Segmentation")
+
+
+Detailed Documentation on Perception SDK can be found [here](https://github.com/Unity-Technologies/com.unity.perception/blob/master/com.unity.perception/Documentation~/index.md)
+
+
+### Switch Camera View
+
+You can switch the camera view to car dashboard camera view by checking the Enable Car Dashboard Camera option on SimulationManager Scipt Component.. This will enable the perception camera component on one of the Cars in the scene.
+
+![Car Dashboard Camera](docs/images/CarDashboardView.png "Car Dashboard Camera")
  
  
-On switching to the car's dashboard camera view, the depth camera is enabled and you will see images with depth data getting saved at the same location. The depth is saved in the format selected from the dropdown (jpg in this case)
- 
-![Depth Capture](docs/images/Sim03.png "Depth Capture")
- 
-#### Running on USim
-The project is created with OpenGL graphics API and so you will be able to run this in USim with CPU based rendering. You can follow the same process described here (add link) to build and run on USim.
- 
- 
-## Run on USim from Editor
-Unity Simulation Client package provide C# APIs to perform USim CLI workflow from the editor and improve iteration time. This project has a menu item which provides option to Build Project and Execute on USim
+## Run on USim
+
+You can run your simulation on USim using the USim CLI by following instructions [here](https://github.com/Unity-Technologies/Unity-Simulation-Docs/blob/master/doc/cli.md) Or you can use simulation client package which exposes C# APIs to automate USim CLI workflow in Unity Editor as per your requirement to improve iteration time. This project demontrates usage of Client package APIs by creating a menu item which provides option to Build Project and Execute on USim. Build Project will perform a Linux Standalone build and zip it up for upload. Execute menu item will create a run definition to run the simulation with the build generated using vCPU6 sysparam and schedule it on USim. After the run is scheduled, it will log the execution-id to the console. Make sure you are logged in to Unity Services and your project is liked to a cloudprojectId.
  
 ![USim Execute](docs/images/Sim06.png "USim Execute")
  
@@ -76,14 +80,14 @@ Limitations
 - Car physics uses a single raycast to account for cars in the front. It does not account for cars in the blind spot.
  
 #### Known Issues
-Depth grab currently does not work as expected with explicit render texture provided to the camera's target texture. The work around for this is, provide a RenderTexture to Car's _RegularCam and set targetTexture of _DepthCam to None while running with the Car dashboard camera view.
+Depth Grab bundled with this project has issues and will be fixed in the next update.
 
 
 ## FAQs
 
 **1. Execute menu option doesn't work for me**
 
-     This might typically happen if you are not logged in or linked your project. You can do this by opening the Service window (Cmd + 0 or Ctrl + 0) and clicking        on SignIn and link your project.
+     This might typically happen if you are not logged in or linked your project. You can do this by opening the Service window (Cmd + 0 or Ctrl + 0) and clicking on SignIn and link your project.
 
 
 **2. I am logged in and my project is linked, I am still not able to run on USim**
