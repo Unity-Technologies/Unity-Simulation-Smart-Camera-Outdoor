@@ -402,9 +402,6 @@ MonoBehaviour:
   rearRight: {fileID: 4852037809867257947}
   maxSteerAngle: 45
   waitAtPosition: 2
-  breakForce: 10
-  maxSpeed: 1
-  maxBrakeTorque: 100
   sensorLength: 1
   frontSensorPosition: 0.5
   startingPoint: 17
@@ -418,6 +415,7 @@ GameObject:
   m_Component:
   - component: {fileID: 4852037808981598326}
   - component: {fileID: 4852037808981598319}
+  - component: {fileID: -6047310643858820404}
   m_Layer: 0
   m_Name: Car2
   m_TagString: car
@@ -465,6 +463,19 @@ LODGroup:
     - renderer: {fileID: 4852037808981598324}
     - renderer: {fileID: 4852037808981598325}
   m_Enabled: 1
+--- !u!114 &-6047310643858820404
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4852037808981598312}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 8b33f0bc2b78db642a758f07826d0dd0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  labels: []
 --- !u!1 &4852037809000741502
 GameObject:
   m_ObjectHideFlags: 0
