@@ -23,7 +23,7 @@ This is an empty gameobject in the hierarchy that is responsible for driving the
 ![USimCaptureDemo](docs/images/Sim04.png "USimCaptureDemo")
  
 #### PerceptionCamera 
-This component enables capture of RGB images, Semantic segmentation and Bounding box annotations for the source camera on which this script is added. In this case the PerceptionCamera script component is added to the intersection camera and the car dashboard camera. You can choose the view for which you want to generate the dataset by clicking on "Switch Camera" while running locally in editor or player and via Simulation AppParam (explained later) while running in the cloud.
+This component enables capture of RGB images, Semantic segmentation and Bounding box annotations for the source camera on which this script is added. In this case the PerceptionCamera script component is added to the intersection camera and the car dashboard camera. You can choose the view for which you want to generate the dataset by selecting the camera view option on USimDataCaptureDemo game object (discussed later).
  
 ![Perception Camera](docs/images/PerceptionCamera.png "Perception Camera")
  
