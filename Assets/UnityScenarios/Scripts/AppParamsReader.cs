@@ -15,7 +15,6 @@ public class AppParamsReader : MonoBehaviour
         public bool captureDrivingLogs;
         public float lightIntensity;
         public string daytime;
-        public string cameraViewToCapture;
     }
     
     [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.AfterSceneLoad)]
@@ -29,7 +28,6 @@ public class AppParamsReader : MonoBehaviour
             SimulationOptions.CaptureDrivingLogs = config.captureDrivingLogs;
             SimulationOptions.LightIntensity = config.lightIntensity;
             SimulationOptions.Daytime = config.daytime;
-            SimulationOptions.CameraViewToCapture = config.cameraViewToCapture;
        }
     }
 }
@@ -43,5 +41,4 @@ public class SimulationOptions
     public static bool CaptureDepth;
     public static float LightIntensity = 1.0f;
     public static string Daytime = "morning";
-    public static string CameraViewToCapture = "Intersection";
 }

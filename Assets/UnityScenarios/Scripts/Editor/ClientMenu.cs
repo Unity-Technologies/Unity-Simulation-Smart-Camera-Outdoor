@@ -16,6 +16,7 @@ public class ClientMenu : MonoBehaviour
     private static Run run;
     private static int _runMonitorInterval = 10;
     private static float _timeElapsed = 0.0f;
+    private static float _downloadProgress = 0;
     [MenuItem("Simulation/Build Project")]
     public static void BuildProject()
     {
@@ -68,6 +69,7 @@ public class ClientMenu : MonoBehaviour
         _thread.Start();
     }
 
+    
     private static void MonitorRunExecution()
     {
         _timeElapsed += Time.deltaTime;
@@ -85,19 +87,19 @@ public class ClientMenu : MonoBehaviour
                     Directory.CreateDirectory(_dataDownloadLocation);
                 
                 var download = EditorUtility.DisplayDialog("Simulation Run",
-                    "The simulation run for " + run.executionId + " is complete", "Download Manifest");
+                    "The simulation run for " + run.executionId + " is complete", "Download Manifest", "Cancel");
+
                 if (download)
                 {
                     var manifest = API.GetManifest(run.executionId);
+                    DownloadData(manifest);
 
-                    var wc = new WebClient();
-
-                    foreach (var entry in manifest)
+                    while (_downloadProgress < manifest.Count)
                     {
-                        var e = entry.Value;
-
-                        wc.DownloadFile(e.downloadUri, _dataDownloadLocation + "/" + e.fileName);
+                        EditorUtility.DisplayProgressBar("Downloading Files", "Downloading Data generated in USim", _downloadProgress/manifest.Count);
                     }
+                    
+                    EditorUtility.ClearProgressBar();
                 }
 
                 runStarted = false;
@@ -108,5 +110,33 @@ public class ClientMenu : MonoBehaviour
         {
             Debug.Log("Uploading Build to USim");
         }
+    }
+
+    private static void DownloadData(Dictionary<int, ManifestEntry> manifest)
+    {
+        var thread = new Thread(new ThreadStart(() =>
+        {
+            var wc = new WebClient();
+            
+            foreach (var entry in manifest)
+            {
+                var e = entry.Value;
+
+                var subDir = e.fileName.Split('/');
+                if (subDir.Length > 1)
+                {
+                    for (int i = 0; i < subDir.Length - 2; i++)
+                        _dataDownloadLocation = _dataDownloadLocation + "/" + subDir[0];
+                    if (!Directory.Exists(_dataDownloadLocation))
+                        Directory.CreateDirectory(_dataDownloadLocation);
+                }
+                wc.DownloadFile(e.downloadUri, _dataDownloadLocation + "/" + subDir[subDir.Length-1]);
+                _dataDownloadLocation = Application.persistentDataPath;
+                _downloadProgress++;
+            }
+        }));
+        
+        thread.Start();
+        
     }
 }

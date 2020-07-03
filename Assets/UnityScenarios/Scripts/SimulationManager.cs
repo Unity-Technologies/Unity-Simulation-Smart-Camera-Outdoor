@@ -11,14 +11,9 @@ using Random = UnityEngine.Random;
 
 public class SimulationManager : MonoBehaviour
 {
-    
-    [Header("Semantic Segmentation View")]
-    public GameObject m_CarCameraSemantic;
-    public GameObject m_IntersectionCameraSemantic;
-    
-    [Header("Main Camera View")]
-    public GameObject m_CarMainCamera;
-    public GameObject m_IntersectionMainCamera;
+
+    [Header("Camera Selection")] 
+    public bool m_EnableCarDashboardCamera;
     
     [Header("Additional Traffic Car Spawning")]
     public GameObject       m_CarPrefab;
@@ -30,6 +25,7 @@ public class SimulationManager : MonoBehaviour
     public GameObject CurrentCameraView;
 
     public ScriptableObject m_LablelingConfiguration;
+    
     [Header("Car Perception Camera")] 
     public GameObject m_CarCamera;
     
@@ -48,90 +44,14 @@ public class SimulationManager : MonoBehaviour
         public int startingDest;
         public Transform path;
     }
+
     private void Start()
     {
         StartCoroutine(SpawnCars());
-        CurrentCameraView = m_IntersectionCamera;
-        if (Configuration.Instance.IsSimulationRunningInCloud())
-        {
-            if (SimulationOptions.CameraViewToCapture == "Car")
-                SwitchCameraView();
-        }
+        CurrentCameraView = m_EnableCarDashboardCamera ? m_CarCamera : m_IntersectionCamera;
+        m_CarCamera.SetActive(m_EnableCarDashboardCamera);
+        m_IntersectionCamera.SetActive(!m_EnableCarDashboardCamera);
     }
-
-    private void EnableIntersectionCameraView()
-    {
-        Debug.Assert(m_IntersectionCamera.GetComponent<Camera>() != null, "No Camera component added");
-        var perceptionCam = m_IntersectionCamera.GetComponent<PerceptionCamera>();
-        if (perceptionCam == null)
-        {
-            var comp = m_IntersectionCamera.AddComponent<PerceptionCamera>();
-            var currentPerceptionCam = CurrentCameraView.GetComponent<PerceptionCamera>();
-            comp.period = currentPerceptionCam.period;
-            comp.captureRgbImages = currentPerceptionCam.captureRgbImages;
-            comp.produceSegmentationImages = currentPerceptionCam.produceSegmentationImages;
-            comp.LabelingConfiguration = currentPerceptionCam.LabelingConfiguration;
-            Destroy(CurrentCameraView.GetComponent<PerceptionCamera>());
-        }
-        DisableDepthCapture();
-        m_CarCamera.SetActive(false);
-        m_IntersectionCamera.SetActive(true);
-        CurrentCameraView = m_IntersectionCamera;
-    }
-
-    private void EnableCarDashboardCamera()
-    {
-        Debug.Assert(m_CarCamera.GetComponent<Camera>() != null, "No Camera component added");
-        var perceptionCam = m_CarCamera.GetComponent<PerceptionCamera>();
-        if (perceptionCam == null)
-        {
-            var comp = m_CarCamera.AddComponent<PerceptionCamera>();
-            var currentPerceptionCam = CurrentCameraView.GetComponent<PerceptionCamera>();
-            comp.period = currentPerceptionCam.period;
-            comp.captureRgbImages = currentPerceptionCam.captureRgbImages;
-            comp.produceSegmentationImages = currentPerceptionCam.produceSegmentationImages;
-            comp.LabelingConfiguration = currentPerceptionCam.LabelingConfiguration;
-            Destroy(CurrentCameraView.GetComponent<PerceptionCamera>());
-        }
-        
-        m_IntersectionCamera.SetActive(false);
-        CurrentCameraView = m_CarCamera;
-        m_CarCamera.SetActive(true);
-        SetupDepthGrab();
-    }
-
-    private void SetupDepthGrab()
-    {
-        if (SimulationOptions.CaptureDepth || !Configuration.Instance.IsSimulationRunningInCloud())
-        {
-            var depthGrab = GetComponent<DepthGrab>();
-            Debug.Assert(depthGrab != null, "Depth Grab component is not added");
-            depthGrab.enabled = true;
-        }
-    }
-
-    private void DisableDepthCapture()
-    {
-        var depthGrab= GetComponent<DepthGrab>();
-        if (depthGrab!= null)
-            depthGrab.enabled = false;
-    }
-
-    /// <summary>
-    /// Switch the camera view between intersection camera view and Car first person view
-    /// </summary>
-    public void SwitchCameraView()
-    {
-        if (m_CarCamera.active)
-        {
-            EnableIntersectionCameraView();   
-        }
-        else
-        {
-            EnableCarDashboardCamera();
-        }
-    }
-
 
     /// <summary>
     /// Spawn cars at Spawn points at an interval of 25s of simulation time.
@@ -165,12 +85,44 @@ public class SimulationManager : MonoBehaviour
     }
 
 
+    /// <summary>
+    /// Add Label to GameObject spawned at runtime.
+    /// </summary>
+    /// <param name="go"></param>
     public void AddLabelingToGameObject(GameObject go)
     {
         Debug.Log(go.name);
         Debug.Assert(!String.IsNullOrEmpty(go.tag), "The GameObject is not tagged");
         var pcam = CurrentCameraView.GetComponent<PerceptionCamera>();
-        var lastLabel = pcam.LabelingConfiguration.LabelEntries.Last();
-        pcam.LabelingConfiguration.LabelEntries.Add(new LabelEntry() { id = lastLabel.id + 1, label = go.tag, value = lastLabel.value + 1000});
+        var labelingComponent = go.AddComponent<Labeling>();
+        labelingComponent.labels = new List<string>() { tag };
+    }
+    
+}
+
+
+#if UNITY_EDITOR
+[CustomEditor(typeof(SimulationManager))]
+public class SimulationManager_Editor : Editor
+{
+    public override void OnInspectorGUI()
+    {
+        base.OnInspectorGUI();
+
+        SimulationManager manager = (SimulationManager) target;
+
+        if (manager.m_EnableCarDashboardCamera)
+        {
+            manager.GetComponent<ApplyLabeling>().m_Camera = manager.m_CarCamera.GetComponent<Camera>();
+            manager.m_CarCamera.SetActive(true);
+            manager.m_IntersectionCamera.SetActive(false);
+        }
+        else
+        {
+            manager.GetComponent<ApplyLabeling>().m_Camera = manager.m_IntersectionCamera.GetComponent<Camera>();
+            manager.m_CarCamera.SetActive(false);
+            manager.m_IntersectionCamera.SetActive(true);
+        }
     }
 }
+#endif
