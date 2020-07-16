@@ -1,4 +1,8 @@
-./Library
+/Library
 ./.DS_Store
-./*.csproj
-./Temp
+/*.sln
+/*.user
+/*.csproj
+/Temp
+/.idea
+/obj
