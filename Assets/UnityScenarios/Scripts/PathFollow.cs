@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Perception.GroundTruth;
 using Logger = Unity.Simulation.Logger;
 
 public class PathFollow : MonoBehaviour
@@ -29,22 +30,10 @@ public class PathFollow : MonoBehaviour
     private bool _greenLight = true;
     private bool _isBraking;
     private bool _forceBrake;
+    
+    public float currentSpeed { get; private set; }
+    public float steer { get; private set; }
 
-
-    private Logger _simulationLogger;
-
-
-    struct DrivingLog
-    {
-        public Vector3 position;
-        public float steer;
-        public double speed;
-
-    }
-
-    private DrivingLog _log;
-
-    private bool _logsEnabled;
     // Start is called before the first frame update
     void Start()
     {
@@ -58,13 +47,6 @@ public class PathFollow : MonoBehaviour
                 _waypointNodes.Add(n);
         }
 
-        _logsEnabled = SimulationOptions.CaptureDrivingLogs;
-
-        if (_logsEnabled)
-        {
-            _simulationLogger = new Logger(transform.parent.name + "_DrivingLog");
-            _log = new DrivingLog();
-        }
     }
 
     private void Update()
@@ -92,23 +74,14 @@ public class PathFollow : MonoBehaviour
         CheckWayPointDistance();
         if (!_isBraking)
             StartCoroutine(ApplyBraking(5.0f));
-        
-        if (_logsEnabled)
-            _simulationLogger.Log(_log);
-        
     }
 
     void ApplySteer()
     {
         var relativePos = transform.InverseTransformPoint(_waypointNodes[_currentPosition].position);
-        var steer = (relativePos.x / relativePos.magnitude) * maxSteerAngle;
+        steer = (relativePos.x / relativePos.magnitude) * maxSteerAngle;
         frontLeft.steerAngle = steer;
         frontRight.steerAngle = steer;
-        if (_logsEnabled)
-        {
-            _log.steer = steer;
-            _log.position = transform.position;   
-        }
     }
 
     IEnumerator ApplyBraking(float brakeTorque)
@@ -139,8 +112,7 @@ public class PathFollow : MonoBehaviour
 
     void Drive()
     {
-        var currentSpeed = 2 * Math.PI * frontLeft.radius * frontLeft.rpm * 60 / 1000;
-        _log.speed = currentSpeed;
+        currentSpeed = (float)(2 * Math.PI * frontLeft.radius * frontLeft.rpm * 60 / 1000);
         if (currentSpeed < 1.0f && !_isBraking)
         {
             frontLeft.motorTorque = 20.0f;

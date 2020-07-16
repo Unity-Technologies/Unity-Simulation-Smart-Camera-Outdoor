@@ -1,7 +1,6 @@
 {
 	"maxNumberOfFrames":500,
 	"numberOfCars":4,
-	"captureDrivingLogs":true,
 	"lightIntensity": 1.0,
 	"daytime" : "afternoon",
 	"cameraViewToCapture": "Intersection"
