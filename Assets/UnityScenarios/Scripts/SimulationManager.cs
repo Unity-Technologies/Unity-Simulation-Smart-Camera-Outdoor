@@ -6,12 +6,11 @@ using Unity.Simulation;
 using UnityEditor;
 using UnityEngine;
 using UnityEngine.Perception.GroundTruth;
-using UnityEngine.UI;
+using Object = System.Object;
 using Random = UnityEngine.Random;
 
 public class SimulationManager : MonoBehaviour
 {
-
     [Header("Camera Selection")] 
     public bool m_EnableCarDashboardCamera;
     
@@ -20,11 +19,10 @@ public class SimulationManager : MonoBehaviour
     public int              m_NumberOfCars;
     public List<SpawnPoint> m_SpawnPoints;
     public Material[]       m_CarMaterials;
-
-
+    
     public GameObject CurrentCameraView;
-
-    public ScriptableObject m_LablelingConfiguration;
+    
+    public string drivingInfoMetricId = "B3671CF5-088E-42C5-9C8F-54C65A75CD77";
     
     [Header("Car Perception Camera")] 
     public GameObject m_CarCamera;
@@ -35,6 +33,9 @@ public class SimulationManager : MonoBehaviour
     
     
     private const int MaxCarsAllowed = 10;
+    
+    private MetricDefinition _drivingLogMetricDefinition;
+    private List<PathFollow> _carPathFollows = new List<PathFollow>(); 
 
 
     [Serializable]
@@ -45,12 +46,23 @@ public class SimulationManager : MonoBehaviour
         public Transform path;
     }
 
+    struct DrivingInfo
+    {
+        public Vector3 position;
+        public float steer;
+        public double speed;
+    }
+
     private void Start()
     {
         StartCoroutine(SpawnCars());
         CurrentCameraView = m_EnableCarDashboardCamera ? m_CarCamera : m_IntersectionCamera;
         m_CarCamera.SetActive(m_EnableCarDashboardCamera);
         m_IntersectionCamera.SetActive(!m_EnableCarDashboardCamera);
+
+        _drivingLogMetricDefinition = DatasetCapture.RegisterMetricDefinition("Driving log", "", Guid.Parse(drivingInfoMetricId));
+        
+        _carPathFollows.AddRange(FindObjectsOfType<PathFollow>());
     }
 
     /// <summary>
@@ -77,6 +89,7 @@ public class SimulationManager : MonoBehaviour
             var pathFollow = (PathFollow)car.GetComponentInChildren(typeof(PathFollow));
             pathFollow.startingPoint = m_SpawnPoints[spawnPoint].startingDest;
             pathFollow.path = m_SpawnPoints[spawnPoint].path;
+            _carPathFollows.Add(pathFollow);
 
             if (spawnPoint == 0)
                 yield return new WaitForSeconds(50.0f);
@@ -84,20 +97,16 @@ public class SimulationManager : MonoBehaviour
 
     }
 
-
-    /// <summary>
-    /// Add Label to GameObject spawned at runtime.
-    /// </summary>
-    /// <param name="go"></param>
-    public void AddLabelingToGameObject(GameObject go)
+    public void Update()
     {
-        Debug.Log(go.name);
-        Debug.Assert(!String.IsNullOrEmpty(go.tag), "The GameObject is not tagged");
-        var pcam = CurrentCameraView.GetComponent<PerceptionCamera>();
-        var labelingComponent = go.AddComponent<Labeling>();
-        labelingComponent.labels = new List<string>() { tag };
+        var drivingInfos = _carPathFollows.Select(p => new DrivingInfo
+        {
+            position = p.transform.position,
+            speed = p.currentSpeed,
+            steer = p.steer
+        }).ToArray();
+        DatasetCapture.ReportMetric(_drivingLogMetricDefinition, drivingInfos);
     }
-    
 }
 
 
@@ -113,13 +122,11 @@ public class SimulationManager_Editor : Editor
 
         if (manager.m_EnableCarDashboardCamera)
         {
-            manager.GetComponent<ApplyLabeling>().m_Camera = manager.m_CarCamera.GetComponent<Camera>();
             manager.m_CarCamera.SetActive(true);
             manager.m_IntersectionCamera.SetActive(false);
         }
         else
         {
-            manager.GetComponent<ApplyLabeling>().m_Camera = manager.m_IntersectionCamera.GetComponent<Camera>();
             manager.m_CarCamera.SetActive(false);
             manager.m_IntersectionCamera.SetActive(true);
         }
